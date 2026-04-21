@@ -51,31 +51,36 @@
     <header class="hero" id="accueil">
         <h1>Décentralisation & Gouvernance locale au Togo</h1>
         <style>
-    .hero-container {
-        width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
-        border-radius: 12px;
+        .hero-container {
+        width: 100%; /* Utilise toute la largeur sur mobile */
+        max-width: 900px; /* Limite la taille sur ordinateur */
+        margin: 15px auto;
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         position: relative;
     }
+
     .hero-image {
         width: 100%;
         height: auto;
+        min-height: 220px; /* Empêche l'image d'être trop plate sur mobile */
+        object-fit: cover; /* Recadre proprement sans déformer */
         display: block;
     }
+
     .hero-text {
         position: absolute;
         bottom: 0;
-        background: rgba(26, 58, 95, 0.8);
+        background: linear-gradient(transparent, rgba(26, 58, 95, 0.9));
         color: white;
         width: 100%;
-        padding: 10px;
+        padding: 15px 10px;
         text-align: center;
         font-size: 0.9rem;
-        font-style: italic;
+        font-family: sans-serif;
     }
+
 </style>
 
 <div class="hero-container">
