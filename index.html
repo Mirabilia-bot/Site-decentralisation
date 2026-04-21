@@ -212,63 +212,106 @@
         /* SECTIONS WRAPPER */
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 35px; position: relative; padding-bottom: 10px; }
-        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 4px; background: var(--accent); }
-
-        /* EXPERTISE GRID */
-        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .card { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--secondary); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--secondary); margin-bottom: 15px; font-size: 1.2rem; }
-
-        /* DOCUMENTS SECTION */
-        .docs-section { background: #edf2f7; padding: 50px 20px; border-radius: 12px; }
-        .doc-item { background: var(--white); padding: 20px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .doc-info strong { display: block; color: var(--primary); font-size: 1rem; }
-        .doc-info span { font-size: 0.85rem; color: #777; }
-        .btn-dl { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.8rem; transition: 0.3s; }
-        .btn-dl:hover { background: var(--secondary); color: var(--white); }
-
-        /* CONTACT SECTION */
-        .contact-area { background: var(--primary); color: var(--white); padding: 60px 20px; text-align: center; margin-top: 50px; }
-        .contact-area h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; }
-        .contact-num { font-size: 1.8rem; color: var(--accent); font-weight: 700; display: block; margin-bottom: 30px; text-decoration: none; }
-        .wa-btn { background: #25d366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
-
-        /* FOOTER */
-        footer { background: #001a33; color: rgba(255,255,255,0.6); padding: 40px 20px; text-align: center; font-size: 0.85rem; }
-        .footer-brand { color: var(--white); font-weight: 700; margin-bottom: 10px; display: block; }
-
-        /* RESPONSIVE FIXES */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 1.8rem; }
-            .doc-item { flex-direction: column; text-align: center; gap: 15px; }
-            .wa-btn { width: 100%; justify-content: center; }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. Gnimdou | Décentralisation & SIG Togo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; scroll-behavior: smooth; overflow-x: hidden; }
+        nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Crimson Pro', serif; font-size: 1.6rem; color: var(--primary); font-weight: bold; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li a:hover { color: var(--secondary); }
+        .hero { padding: 120px 8% 80px; background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%); text-align: center; }
+        .hero h1 { font-family: 'Crimson Pro', serif; font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto 30px; color: #546e7a; }
+        .btn-main { background: var(--accent); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        section { padding: 80px 8%; border-bottom: 1px solid #eee; }
+        .section-title { font-family: 'Crimson Pro', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 35px; border-radius: 8px; border: 1px solid #eee; transition: 0.4s; }
+        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary); }
+        .card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .res-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .download { color: var(--secondary); font-weight: bold; text-decoration: none; border: 1px solid var(--secondary); padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
+        .download:hover { background: var(--secondary); color: white; }
+        .contact-info { margin-top: 30px; font-size: 1.1rem; }
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+        footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
+        .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        /* Correction Mobile pour éviter le décalage */
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2rem; } 
+            nav { flex-direction: column; padding: 1rem; } 
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; } 
+            nav ul li { margin: 5px 10px; }
+            .res-item { flex-direction: column; text-align: center; gap: 15px; } 
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <a href="#" class="logo">K. GNIMDOU</a>
-            <ul class="nav-links">
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#ressources">Ressources</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
+    <nav>
+        <div class="logo">K. GNIMDOU</div>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#ressources">Ressources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="hero" id="accueil">
         <h1>Décentralisation & Gouvernance au Togo</h1>
-        <p>Expertise de haut niveau en Systèmes d'Information Géographique (SIG) dédiée à la performance des Collectivités Territoriales.</p>
-        <a href="#ressources" class="cta-btn">Consulter les Documents</a>
+        <p>L'expertise technique en <strong>Systèmes d'Information Géographique (SIG)</strong> au service du développement des Collectivités Territoriales.</p>
+        <a href="#ressources" class="btn-main">Consulter les Ressources</a>
+    </header>
+    <section id="expertise">
+        <h2 class="section-title">Domaines d'Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cartographie SIG</h3>
+                <p>Maîtrise du géoréférencement pour la gestion foncière, l'urbanisme et le suivi des infrastructures communales.</p>
+            </div>
+            <div class="card">
+                <h3>Gouvernance Locale</h3>
+                <p>Accompagnement dans l'application de la Loi n° 2019-006 pour une administration décentralisée efficace.</p>
+            </div>
+            <div class="card">
+                <h3>Services Numériques</h3>
+                <p>Optimisation des ressources propres des communes via la digitalisation (Paiements mobiles, e-services).</p>
+            </div>
+        </div>
     </section>
-
-    <main class="container">
-        
-        <section id="expertise">
-            <h2 class="section-title">Domaines d'Expertise</h2>
-            <div class="expertise-grid">
-
+    <section id="ressources" style="background: #f4f7f9;">
+        <h2 class="section-title">Documents de Référence</h2>
+        <div class="res-item">
+            <div><strong>Loi sur la Décentralisation (Togo)</strong><br><small>Loi n° 2019-006 - Cadre juridique officiel</small></div>
+            <a href="loi-decentralisation.pdf" class="download" target="_blank">Consulter</a>
+        </div>
+        <div class="res-item">
+            <div><strong>Guide du Géoréférencement v1.0</strong><br><small>Par K. Gnimdou - Manuel technique pour techniciens SIG</small></div>
+            <a href="guide-georef-gnimdou.pdf" class="download" download>Télécharger</a>
+        </div>
+    </section>
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Contact & Consultance</h2>
+        <div class="contact-info">
+            <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
+            <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" class="contact-link">+228 93 01 91 05</a></p>
+            <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" class="contact-link">Démarrer une discussion</a></p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-logo">K. GNIMDOU</div>
+        <p>Spécialiste SIG | Consultant en Gouvernance Territoriale</p>
+        <p class="copy">&copy; K. Gnimdou 2026 - Togo. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
