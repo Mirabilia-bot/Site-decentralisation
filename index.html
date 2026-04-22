@@ -15,27 +15,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; scroll-behavior: smooth; }
         
-        /* Navigation */
         nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
-        /* Logo Style */
         .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; }
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
-        /* Hero Section */
         .hero { padding: 120px 8% 80px; background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%); text-align: center; }
         .hero h1 { font-family: 'Crimson Pro', serif; font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto 30px; color: #546e7a; }
         .btn-main { background: var(--accent); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
 
-        /* Image Hero Container */
         .hero-container { width: 100%; max-width: 900px; margin: 15px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative; }
         .hero-image { width: 100%; height: auto; min-height: 220px; object-fit: cover; display: block; }
         .hero-text { position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(26, 58, 95, 0.9)); color: white; width: 100%; padding: 20px 30px; text-align: center; font-family: 'Dancing Script', cursive !important; font-size: 1.8rem !important; font-style: italic; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); transform: rotate(-2deg); line-height: 1.2; }
 
-        /* Sections & Cards */
         section { padding: 80px 8%; border-bottom: 1px solid #eee; }
         .section-title { font-family: 'Crimson Pro', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -43,7 +38,6 @@
         .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary); }
         .card h3 { color: var(--secondary); margin-bottom: 15px; }
 
-        /* Ressources */
         .res-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .download { color: var(--secondary); font-weight: bold; text-decoration: none; border: 1px solid var(--secondary); padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
         
@@ -51,7 +45,6 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        /* Responsive */
         @media (max-width: 768px) { 
             .hero h1 { font-size: 2rem; } 
             nav { flex-direction: column; padding: 10px 3%; } 
@@ -82,18 +75,15 @@
 
     <header class="hero" id="accueil">
         <h1>Décentralisation & Gouvernance locale au Togo</h1>
-        
         <div class="hero-container">
             <img src="header-expert.png" alt="Expertise SIG Togo" class="hero-image">
             <div class="hero-text">"La maîtrise du territoire pour un développement local durable."</div>
         </div>
-        
         <p>L'expertise technique en <strong>Systèmes d'Information Géographique (SIG)</strong> au service du développement des Collectivités Territoriales.</p>
         <a href="#ressources" class="btn-main">Consulter les Ressources</a>
     </header>
 
-    <section id="expertise">
-        <h2 class="section-title">Domaines d'Expertise</h2>
+    <section id="expertise"> <h2 class="section-title">Domaines d'Expertise</h2>
         <div class="grid">
             <div class="card">
                 <h3>Cartographie SIG</h3>
@@ -114,8 +104,7 @@
         </div>
     </section>
 
-    <section id="ressources" style="background: #f4f7f9;">
-        <h2 class="section-title">Documents de Référence</h2>
+    <section id="ressources" style="background: #f4f7f9;"> <h2 class="section-title">Documents de Référence</h2>
         <div class="res-item">
             <div><strong>Loi sur la Décentralisation (Togo)</strong><br><small>Loi n° 2019-006 - Cadre juridique officiel</small></div>
             <a href="loi-decentralisation.pdf" class="download" target="_blank">Consulter</a>
@@ -126,8 +115,7 @@
         </div>
     </section>
 
-    <section id="contact" style="text-align: center;">
-        <h2 class="section-title">Contact & Consultance</h2>
+    <section id="contact" style="text-align: center;"> <h2 class="section-title">Contact & Consultance</h2>
         <div class="contact-info">
             <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
             <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" class="contact-link">+228 93 01 91 05</a></p>
