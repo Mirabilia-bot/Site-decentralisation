@@ -15,35 +15,38 @@
         nav { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo { display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
         .logo-text { display: flex; flex-direction: column; line-height: 1.1; font-family: sans-serif; }
-        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.85rem; }
+        .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.8rem; }
 
         /* Hero Section */
         .hero { padding: 40px 8% 60px; text-align: center; background: #fff; }
         .hero h1 { font-family: 'Crimson Pro', serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
         .hero-container { width: 100%; max-width: 900px; margin: 20px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); position: relative; }
-        .hero-image { width: 100%; height: auto; display: block; min-height: 200px; object-fit: cover; }
-        .hero-text { position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0, 38, 77, 0.8)); color: white; width: 100%; padding: 20px; text-align: center; font-family: 'Dancing Script', cursive !important; font-size: 1.6rem !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-image { width: 100%; height: auto; display: block; min-height: 220px; object-fit: cover; }
+        .hero-text { position: absolute; bottom: 0; background: linear-gradient(transparent, rgba(0, 38, 77, 0.8)); color: white; width: 100%; padding: 20px; text-align: center; font-family: 'Dancing Script', cursive !important; font-size: 1.8rem !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); transform: rotate(-1deg); }
 
         /* Sections & Cards */
         section { padding: 60px 8%; border-bottom: 1px solid #eee; }
-        .section-title { font-family: 'Crimson Pro', serif; font-size: 2rem; color: var(--primary); margin-bottom: 30px; border-bottom: 3px solid var(--accent); display: inline-block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #eee; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-top: 4px solid var(--secondary); }
-        .card h3 { color: var(--secondary); margin-bottom: 10px; }
+        .section-title { font-family: 'Crimson Pro', serif; font-size: 2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 35px; border-radius: 8px; border: 1px solid #eee; transition: 0.4s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary); }
+        .card h3 { color: var(--secondary); margin-bottom: 15px; }
         
         .res-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .download { color: var(--secondary); font-weight: bold; text-decoration: none; border: 1px solid var(--secondary); padding: 8px 15px; border-radius: 4px; }
+        .download { color: var(--secondary); font-weight: bold; text-decoration: none; border: 1px solid var(--secondary); padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
         
-        footer { background: var(--primary); color: #fff; padding: 40px 8%; text-align: center; }
-        
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+        footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
+        .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+
         /* Mobile */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8rem; }
-            .nav-links { justify-content: center; width: 100%; margin-top: 10px; }
-            nav { flex-direction: column; padding: 10px; }
-            .hero-text { font-size: 1.1rem !important; }
+            .nav-links { justify-content: center; width: 100%; margin-top: 10px; gap: 10px; }
+            nav { flex-direction: column; padding: 10px 3%; }
+            .hero-text { font-size: 1.2rem !important; }
+            .res-item { flex-direction: column; text-align: center; gap: 15px; }
         }
     </style>
 </head>
@@ -51,10 +54,10 @@
 
     <nav>
         <a href="index.html" class="logo">
-            <span style="font-size: 1.5rem;">🏛️</span>
+            <span style="font-size: 1.5rem; color: #006a4e;">🏛️</span>
             <div class="logo-text">
-                <span style="font-weight: 800; color: #1a3a5f; font-size: 0.9rem;">DÉCENTRALISATION</span>
-                <span style="font-weight: 700; color: #fecb00; font-size: 0.7rem;">AU TOGO</span>
+                <span style="font-weight: 800; color: #1a3a5f; font-size: 0.85rem;">DÉCENTRALISATION</span>
+                <span style="font-weight: 700; color: #fecb00; font-size: 0.65rem;">AU TOGO</span>
             </div>
         </a>
         <div class="nav-links">
@@ -72,36 +75,5 @@
             <img src="header-expert.png" alt="Expertise SIG Togo" class="hero-image">
             <div class="hero-text">"La maîtrise du territoire pour un développement local durable."</div>
         </div>
-        <p style="margin-top:20px;">L'expertise technique en <strong>SIG</strong> au service des Collectivités Territoriales.</p>
-    </header>
-
-    <section id="expertise">
-        <h2 class="section-title">Domaines d'Expertise</h2>
-        <div class="grid">
-            <div class="card"><h3>Cartographie SIG</h3><p>Géoréférencement pour la gestion foncière et l'urbanisme.</p></div>
-            <div class="card"><h3>Gouvernance Locale</h3><p>Application de la Loi n° 2019-006 pour les communes.</p></div>
-            <div class="card"><h3>Analyse Spatiale</h3><p>Traitement de données géographiques pour l'aide à la décision.</p></div>
-        </div>
-    </section>
-
-    <section id="ressources" style="background: #f4f7f9;">
-        <h2 class="section-title">Documents de Référence</h2>
-        <div class="res-item">
-            <div><strong>Loi sur la Décentralisation</strong><br><small>Loi n° 2019-006</small></div>
-            <a href="loi-decentralisation.pdf" class="download" target="_blank">Consulter</a>
-        </div>
-    </section>
-
-    <section id="contact" style="text-align: center;">
-        <h2 class="section-title">Contact</h2>
-        <p>📍 Lomé, Togo | 📞 <a href="tel:+22893019105" style="color:var(--primary); font-weight:bold;">+228 93 01 91 05</a></p>
-    </section>
-
-    <footer>
-        <p><strong>K. GNIMDOU</strong></p>
-        <p>Expert SIG & Consultant Territorial</p>
-        <p style="font-size: 0.7rem; margin-top: 20px; opacity: 0.6;">&copy; 2026 Togo - Tous droits réservés.</p>
-    </footer>
-
-</body>
-</html>
+        <p style="margin-top:25px; max-width: 800px; margin-left: auto; margin-right: auto;">L'expertise technique en <strong>Systèmes d'Information Géographique (SIG)</strong> au service du développement des Collectivités Territoriales
+            
