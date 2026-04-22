@@ -45,8 +45,11 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-                            @media (max-width: 768px) { 
-            /* On force le conteneur à empiler Logo et Menu verticalement */
+                                    /* Responsive corrigé pour affichage horizontal sous le logo */
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2rem; } 
+            
+            /* On empile le logo et le menu verticalement */
             nav { 
                 flex-direction: column !important; 
                 align-items: flex-start !important; 
@@ -54,37 +57,31 @@
                 gap: 12px !important;
             } 
             
-            /* On force les liens à rester sur une seule ligne sous le logo */
+            /* On force les liens à rester horizontaux et à gauche */
             .nav-links { 
+                margin-top: 0 !important; 
                 display: flex !important;
-                flex-direction: row !important; 
-                flex-wrap: nowrap !important;
+                flex-direction: row !important; /* Reste horizontal */
+                flex-wrap: nowrap !important;   /* Interdit le retour à la ligne */
                 justify-content: flex-start !important;
-                gap: 15px !important; 
+                gap: 12px !important; 
                 width: 100% !important;
-                margin: 0 !important;
+                overflow-x: auto; /* Permet de glisser si l'écran est très étroit */
+                padding-bottom: 5px;
             }
 
             .nav-links a {
-                font-size: 0.8rem !important; 
-                white-space: nowrap !important; /* Empêche les mots de revenir à la ligne */
-                padding: 0 !important;
+                font-size: 0.75rem !important; /* Taille réduite pour tout faire tenir */
+                margin-left: 0 !important;
+                white-space: nowrap !important;
             }
 
-            /* On s'assure que le logo reste bien à gauche */
-            .logo { 
-                border-left: 3px solid #006a4e !important;
-                padding-left: 10px !important;
-            }
-
-            /* Correction pour les titres qui débordent sur mobile */
-            .hero h1 { font-size: 1.8rem; }
-            .section-title { font-size: 1.6rem; }
-            h3 { font-size: 1.2rem !important; word-wrap: break-word; }
-            .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); }
-                }
-        
-        
+            .res-item { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); padding: 10px 15px; }
+            
+            /* Ajustement pour que les titres d'expertise ne débordent pas */
+            .card h3 { font-size: 1.2rem; }
+        }
         
         @media (max-width: 600px) {
     .section-title { font-size: 1.6rem; }
