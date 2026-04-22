@@ -27,16 +27,28 @@
         footer { background: var(--primary); color: white; padding: 40px 8%; text-align: center; }
         .back-btn { display: inline-block; margin-top: 40px; padding: 10px 20px; border: 1px solid var(--primary); text-decoration: none; color: var(--primary); border-radius: 4px; transition: 0.3s; }
         .back-btn:hover { background: var(--primary); color: white; }
+            @media (max-width: 768px) {
+            nav {
+                padding: 15px 5% !important;
+            }
+            h1 {
+                font-size: 1.8rem !important; /* Réduit le titre de l'article pour mobile */
+                padding: 0 10px;
+            }
+            .article-header {
+                padding: 40px 5% 20px !important;
+            }
+            }
+        
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo-link">
-            <span style="font-size: 1.5rem;">🏛️</span>
-            <span>K. GNIMDOU</span>
+        <nav style="justify-content: flex-start;">
+        <a href="blog.html" style="text-decoration:none; color:var(--primary); font-weight:bold; font-size: 0.9rem;">
+            ← Retour aux analyses
         </a>
-        <a href="blog.html" style="text-decoration:none; color:var(--primary); font-weight:bold;">←Retour aux analyses</a>
     </nav>
 
     <header class="article-header">
