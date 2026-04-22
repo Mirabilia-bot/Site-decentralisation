@@ -45,43 +45,45 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-                    @media (max-width: 768px) { 
-            /* On force le logo et les liens à s'empiler (l'un sous l'autre) */
+                            @media (max-width: 768px) { 
+            /* On force le conteneur à empiler Logo et Menu verticalement */
             nav { 
                 flex-direction: column !important; 
                 align-items: flex-start !important; 
-                padding: 15px 5%;
-                gap: 12px;
+                padding: 15px 5% !important;
+                gap: 12px !important;
             } 
             
-            /* Les liens s'alignent horizontalement sous le logo */
+            /* On force les liens à rester sur une seule ligne sous le logo */
             .nav-links { 
                 display: flex !important;
                 flex-direction: row !important; 
+                flex-wrap: nowrap !important;
                 justify-content: flex-start !important;
-                gap: 15px; 
-                width: 100%;
-                margin: 0;
+                gap: 15px !important; 
+                width: 100% !important;
+                margin: 0 !important;
             }
 
             .nav-links a {
-                font-size: 0.85rem; 
-                padding: 0;
-                white-space: nowrap; /* Empêche les mots de se couper */
+                font-size: 0.8rem !important; 
+                white-space: nowrap !important; /* Empêche les mots de revenir à la ligne */
+                padding: 0 !important;
             }
 
-            /* On garde le logo aligné à gauche */
+            /* On s'assure que le logo reste bien à gauche */
             .logo { 
-                border-left: 3px solid #006a4e;
-                padding-left: 10px;
+                border-left: 3px solid #006a4e !important;
+                padding-left: 10px !important;
             }
 
-            /* Ajustements pour les titres qui débordent */
-            .hero h1 { font-size: 1.8rem; text-align: left; }
+            /* Correction pour les titres qui débordent sur mobile */
+            .hero h1 { font-size: 1.8rem; }
             .section-title { font-size: 1.6rem; }
-            h3 { font-size: 1.2rem !important; }
+            h3 { font-size: 1.2rem !important; word-wrap: break-word; }
             .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); }
-                    }
+                }
+        
         
         
         @media (max-width: 600px) {
