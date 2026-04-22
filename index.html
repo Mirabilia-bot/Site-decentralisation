@@ -45,39 +45,43 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-                                @media (max-width: 768px) { 
-            /* On aligne le logo et le menu en colonne pour qu'ils se superposent */
+                    @media (max-width: 768px) { 
+            /* On force le logo et les liens à s'empiler (l'un sous l'autre) */
             nav { 
                 flex-direction: column !important; 
-                align-items: flex-start; /* Aligné à gauche comme le logo */
-                padding: 10px 5%;
-                gap: 10px;
+                align-items: flex-start !important; 
+                padding: 15px 5%;
+                gap: 12px;
             } 
             
-            /* Les liens restent sur une seule ligne horizontale en dessous */
+            /* Les liens s'alignent horizontalement sous le logo */
             .nav-links { 
-                display: flex;
+                display: flex !important;
                 flex-direction: row !important; 
-                flex-wrap: nowrap; /* Empêche de revenir à la ligne */
-                justify-content: flex-start;
-                gap: 15px; /* Espace entre Expertise, Analyses, etc. */
+                justify-content: flex-start !important;
+                gap: 15px; 
                 width: 100%;
-                overflow-x: auto; /* Permet de glisser si l'écran est minuscule */
-                padding-bottom: 5px;
+                margin: 0;
             }
 
             .nav-links a {
-                font-size: 0.8rem; /* Taille idéale pour mobile */
-                white-space: nowrap;
+                font-size: 0.85rem; 
                 padding: 0;
+                white-space: nowrap; /* Empêche les mots de se couper */
             }
 
-            /* Ajustements des titres pour le confort mobile */
+            /* On garde le logo aligné à gauche */
+            .logo { 
+                border-left: 3px solid #006a4e;
+                padding-left: 10px;
+            }
+
+            /* Ajustements pour les titres qui débordent */
             .hero h1 { font-size: 1.8rem; text-align: left; }
             .section-title { font-size: 1.6rem; }
             h3 { font-size: 1.2rem !important; }
             .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); }
-                                }
+                    }
         
         
         @media (max-width: 600px) {
