@@ -52,23 +52,56 @@
         color: #fecb00;
         font-weight: bold;
             }
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+    /* --- APPLICATION DU STYLE ARTISTIQUE AU TEXTE --- */
+    .hero-text {
+        font-family: 'Dancing Script', cursive !important; /* Force la police manuscrite */
+        font-size: 1.8rem !important; /* Plus grand pour être lisible */
+        font-style: italic; /* L'italique artistique */
+        color: #ffffff !important; /* Blanc pur pour le contraste */
         
+        /* L'effet "Génie" : une ombre portée douce pour un effet 3D */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; 
+        
+        /* Ajustements de position pour un rendu "Signature" */
+        transform: rotate(-2deg); /* Légère inclinaison artistique */
+        padding: 20px 30px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Ajustement spécial pour mobile pour que ça reste lisible */
+    @media (max-width: 600px) {
+        .hero-text {
+            font-size: 1.2rem !important;
+            transform: rotate(-1deg);
+            padding: 10px 15px !important;
+        }
+    }
+            
+</style>
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-    <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-    
-    <div>
-        DÉCENTRALISATION <br>
-        <span class="logo-sub">AU TOGO</span>
-    </div>
-</div>
-    <div class="nav-links" style="display: flex; gap: 15px;">
-        <a href="index.html" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem;">Accueil</a>
-        <a href="blog.html" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem;">Blog</a>
-    </div>
+    <body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px;">
+            <span style="font-size: 1.5rem; color: #006a4e;">🏛️</span> 
+            <div style="display: flex; flex-direction: column; line-height: 1.1;">
+                <span style="font-weight: 800; font-size: 0.85rem; color: #1a3a5f;">DÉCENTRALISATION</span>
+                <span style="font-weight: 700; font-size: 0.65rem; color: #fecb00;">AU TOGO</span>
+            </div>
+        </div>
+        
+        <div class="nav-links" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end;">
+            <a href="index.html" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.8rem;">Accueil</a>
+            <a href="#expertise" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.8rem;">Expertise</a>
+            <a href="blog.html" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.8rem;">Blog</a>
+            <a href="#ressources" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.8rem;">Ressources</a>
+            <a href="#contact" style="text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.8rem;">Contact</a>
+        </div>
+    </nav>
         
     <header class="hero" id="accueil">
         <h1>Décentralisation & Gouvernance locale au Togo</h1>
@@ -122,34 +155,7 @@
             }
              /* --- CHARGEMENT DE LA POLICE ARTISTIQUE --- */
     /* Nous utilisons 'Dancing Script', une police manuscrite élégante et pro */
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
-    /* --- APPLICATION DU STYLE ARTISTIQUE AU TEXTE --- */
-    .hero-text {
-        font-family: 'Dancing Script', cursive !important; /* Force la police manuscrite */
-        font-size: 1.8rem !important; /* Plus grand pour être lisible */
-        font-style: italic; /* L'italique artistique */
-        color: #ffffff !important; /* Blanc pur pour le contraste */
-        
-        /* L'effet "Génie" : une ombre portée douce pour un effet 3D */
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; 
-        
-        /* Ajustements de position pour un rendu "Signature" */
-        transform: rotate(-2deg); /* Légère inclinaison artistique */
-        padding: 20px 30px !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Ajustement spécial pour mobile pour que ça reste lisible */
-    @media (max-width: 600px) {
-        .hero-text {
-            font-size: 1.2rem !important;
-            transform: rotate(-1deg);
-            padding: 10px 15px !important;
-        }
-    }
-            
-</style>
 
 <div class="hero-container">
     <img src="header-expert.png" alt="Expertise SIG Togo" class="hero-image">
