@@ -46,10 +46,8 @@
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
                                     /* Responsive corrigé pour affichage horizontal sous le logo */
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2rem; } 
-            
-            /* On empile le logo et le menu verticalement */
+                @media (max-width: 768px) { 
+            /* On force l'empilement vertical du nav */
             nav { 
                 flex-direction: column !important; 
                 align-items: flex-start !important; 
@@ -57,31 +55,29 @@
                 gap: 12px !important;
             } 
             
-            /* On force les liens à rester horizontaux et à gauche */
+            /* On force les liens à rester sur une seule ligne horizontale */
             .nav-links { 
                 margin-top: 0 !important; 
                 display: flex !important;
-                flex-direction: row !important; /* Reste horizontal */
-                flex-wrap: nowrap !important;   /* Interdit le retour à la ligne */
+                flex-direction: row !important; 
+                flex-wrap: nowrap !important;
                 justify-content: flex-start !important;
-                gap: 12px !important; 
+                gap: 15px !important; 
                 width: 100% !important;
-                overflow-x: auto; /* Permet de glisser si l'écran est très étroit */
+                overflow-x: auto; /* Permet de défiler si l'écran est très petit */
                 padding-bottom: 5px;
             }
 
             .nav-links a {
-                font-size: 0.75rem !important; /* Taille réduite pour tout faire tenir */
+                font-size: 0.8rem !important; 
                 margin-left: 0 !important;
                 white-space: nowrap !important;
             }
 
-            .res-item { flex-direction: column; text-align: center; gap: 15px; }
-            .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); padding: 10px 15px; }
-            
-            /* Ajustement pour que les titres d'expertise ne débordent pas */
-            .card h3 { font-size: 1.2rem; }
-        }
+            /* On redresse le texte incliné pour gagner de la place */
+            .hero-text { font-size: 1.1rem !important; transform: rotate(0deg) !important; padding: 10px 15px; }
+            .hero h1 { font-size: 1.8rem; }
+                }
         
         @media (max-width: 600px) {
     .section-title { font-size: 1.6rem; }
@@ -91,25 +87,23 @@
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
-    <div class="logo">
-        <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-        <div>
-            DÉCENTRALISATION <br>
-            <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold;">AU TOGO</span>
-        </div>
-    </div>
+        <nav>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;" class="logo">
+            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
+            <div>
+                DÉCENTRALISATION <br>
+                <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold;">AU TOGO</span>
+            </div>
         </a>
+
         <div class="nav-links">
             <a href="#expertise">Expertise</a>
             <a href="blog.html">Analyses</a>
             <a href="#ressources">Ressources</a>
             <a href="#contact">Contact</a>
         </div>
-    </nav>
+        </nav>
+    
 
     <header class="hero" id="accueil">
         <h1>Décentralisation & Gouvernance locale au Togo</h1>
