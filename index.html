@@ -124,6 +124,34 @@
             padding: 5px 3% !important; /* Réduit l'espace vide en haut */
         }
             }
+             /* --- CHARGEMENT DE LA POLICE ARTISTIQUE --- */
+    /* Nous utilisons 'Dancing Script', une police manuscrite élégante et pro */
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+    /* --- APPLICATION DU STYLE ARTISTIQUE AU TEXTE --- */
+    .hero-text {
+        font-family: 'Dancing Script', cursive !important; /* Force la police manuscrite */
+        font-size: 1.8rem !important; /* Plus grand pour être lisible */
+        font-style: italic; /* L'italique artistique */
+        color: #ffffff !important; /* Blanc pur pour le contraste */
+        
+        /* L'effet "Génie" : une ombre portée douce pour un effet 3D */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; 
+        
+        /* Ajustements de position pour un rendu "Signature" */
+        transform: rotate(-2deg); /* Légère inclinaison artistique */
+        padding: 20px 30px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Ajustement spécial pour mobile pour que ça reste lisible */
+    @media (max-width: 600px) {
+        .hero-text {
+            font-size: 1.2rem !important;
+            transform: rotate(-1deg);
+            padding: 10px 15px !important;
+        }
+    }
             
 </style>
 
