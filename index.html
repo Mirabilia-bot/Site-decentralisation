@@ -45,13 +45,51 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2rem; } 
-            nav { flex-direction: column; padding: 10px 3%; } 
-            .nav-links { margin-top: 15px; }
+                @media (max-width: 768px) { 
+            /* On ajuste le menu pour qu'il soit compact et centré */
+            nav { 
+                flex-direction: column; 
+                padding: 15px 2%; 
+                gap: 10px;
+            } 
+            
+            .nav-links { 
+                margin-top: 5px; 
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center;
+                gap: 8px 15px; 
+                width: 100%;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem; 
+                text-transform: uppercase;
+                font-weight: 700;
+                padding: 4px;
+            }
+
+            /* On réduit la taille des titres pour qu'ils ne débordent pas */
+            .hero h1 { font-size: 1.8rem; padding: 0 10px; line-height: 1.2; }
+            .section-title { font-size: 1.6rem; margin-bottom: 25px; }
+            
+            /* Ajustement crucial pour les titres des cartes d'expertise et d'analyses */
+            .card h3, h3 { 
+                font-size: 1.2rem !important; 
+                line-height: 1.3 !important;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+            .hero-text { 
+                font-size: 1.1rem !important; 
+                transform: rotate(0deg); /* On remet à plat pour gagner de la place */
+                padding: 10px 15px; 
+            }
+
             .res-item { flex-direction: column; text-align: center; gap: 15px; }
-            .hero-text { font-size: 1.2rem !important; transform: rotate(-1deg); padding: 10px 15px; }
-        }
+                }
+        
         @media (max-width: 600px) {
     .section-title { font-size: 1.6rem; }
     footer p { font-size: 0.75rem; }
@@ -63,14 +101,16 @@
 
     <nav>
         <div class="logo">
-            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-            <div>
-                DÉCENTRALISATION <br>
-                <span class="logo-sub">AU TOGO</span>
-            </div>
+        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+    <div class="logo">
+        <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
+        <div>
+            DÉCENTRALISATION <br>
+            <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold;">AU TOGO</span>
         </div>
+    </div>
+        </a>
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
             <a href="#expertise">Expertise</a>
             <a href="blog.html">Analyses</a>
             <a href="#ressources">Ressources</a>
