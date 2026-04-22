@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Ressources | Expert Décentralisation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; background: #f9f9f9; }
+        
+        /* Navigation */
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { font-weight: 800; color: #1a3a5f; text-decoration: none; border-left: 4px solid #006a4e; padding-left: 10px; line-height: 1; }
+        .nav-links a { text-decoration: none; color: #1a3a5f; margin-left: 20px; font-weight: 600; }
+
+        /* Header Blog */
+        .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
+        
+        /* Grille d'articles */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-category { background: #006a4e; color: white; padding: 5px 15px; font-size: 0.8rem; display: inline-block; margin: 20px 20px 0; border-radius: 20px; }
+        .card-content { padding: 20px; }
+        .card-title { color: #1a3a5f; margin: 0 0 10px; font-size: 1.3rem; }
+        .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; }
+        
+        /* Sidebar/Ressources */
+        .resources-section { background: #eee; padding: 40px 20px; border-radius: 10px; margin-top: 50px; }
+        
+        @media (max-width: 600px) {
+            .blog-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">DÉCENTRALISATION<br><span style="font-size:0.7rem; color:#fecb00;">AU TOGO</span></a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <h1>Blog & Ressources</h1>
+        <p>Analyses territoriales et guides pratiques sur la gouvernance au Togo</p>
+    </header>
+
+    <div class="container">
+        <article class="card">
+            <span class="card-category">Analyse</span>
+            <div class="card-content">
+                <h3 class="card-title">L'impact des SIG dans la gestion communale</h3>
+                <p class="card-text">Comment l'outil cartographique révolutionne la levée de l'impôt foncier et la planification urbaine...</p>
+                <a href="#" style="color:#006a4e; font-weight:bold; text-decoration:none;">Lire l'article →</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <span class="card-category">Guide</span>
+            <div class="card-content">
+                <h3 class="card-title">Réussir son PDC (Plan de Développement Communal)</h3>
+                <p class="card-text">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
+                <a href="#" style="color:#006a4e; font-weight:bold; text-decoration:none;">Lire l'article →</a>
+            </div>
+        </article>
+    </div>
+
+    <section class="container">
+        <div class="resources-section">
+            <h2 style="color: #1a3a5f;">📚 Ressources à télécharger</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;">📄 <a href="#" style="color: #006a4e;">Guide de la Décentralisation (PDF)</a></li>
+                <li style="margin-bottom: 10px;">📊 <a href="#" style="color: #006a4e;">Modèle de rapport de géoréférencement</a></li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
