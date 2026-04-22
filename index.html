@@ -45,35 +45,39 @@
         footer { background: var(--primary); color: #fff; padding: 60px 8% 20px; text-align: center; }
         .copy { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-                        @media (max-width: 768px) { 
-            /* On garde l'alignement horizontal (row) */
+                                @media (max-width: 768px) { 
+            /* On aligne le logo et le menu en colonne pour qu'ils se superposent */
             nav { 
-                flex-direction: row; 
-                justify-content: space-between;
-                padding: 10px 3%; 
+                flex-direction: column !important; 
+                align-items: flex-start; /* Aligné à gauche comme le logo */
+                padding: 10px 5%;
+                gap: 10px;
             } 
             
+            /* Les liens restent sur une seule ligne horizontale en dessous */
             .nav-links { 
-                margin-top: 0; 
                 display: flex;
-                flex-direction: row; /* Aligné horizontalement */
-                flex-wrap: nowrap;   /* Interdiction de revenir à la ligne */
-                gap: 8px;            /* On serre l'espace entre les liens */
+                flex-direction: row !important; 
+                flex-wrap: nowrap; /* Empêche de revenir à la ligne */
+                justify-content: flex-start;
+                gap: 15px; /* Espace entre Expertise, Analyses, etc. */
+                width: 100%;
+                overflow-x: auto; /* Permet de glisser si l'écran est minuscule */
+                padding-bottom: 5px;
             }
 
             .nav-links a {
-                font-size: 0.7rem;   /* Taille réduite pour que tout tienne sur une ligne */
-                text-transform: uppercase;
-                white-space: nowrap; /* Empêche un mot de se couper en deux */
+                font-size: 0.8rem; /* Taille idéale pour mobile */
+                white-space: nowrap;
+                padding: 0;
             }
 
-            /* Correction pour les titres qui débordaient */
-            .hero h1 { font-size: 1.8rem; }
-            .section-title { font-size: 1.5rem; }
-            h3 { font-size: 1.1rem !important; word-wrap: break-word; }
-            
-            .logo { font-size: 0.7rem; } /* On réduit un peu le logo aussi */
-                        }
+            /* Ajustements des titres pour le confort mobile */
+            .hero h1 { font-size: 1.8rem; text-align: left; }
+            .section-title { font-size: 1.6rem; }
+            h3 { font-size: 1.2rem !important; }
+            .hero-text { font-size: 1.1rem !important; transform: rotate(0deg); }
+                                }
         
         
         @media (max-width: 600px) {
