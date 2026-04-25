@@ -16,7 +16,7 @@
 
         /* NAV STYLES (Identique Index) */
         nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
+        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; }
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; margin-left: 15px; }
 
@@ -42,38 +42,51 @@
         .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 768px) { 
+    /* Force l'empilement vertical du nav */
     nav { 
         flex-direction: column !important; 
         align-items: flex-start !important; 
-        padding: 15px 5% !important; 
-        gap: 12px !important; 
+        padding: 15px 5% !important;
+        gap: 12px !important;
+    } 
+    .res-item { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        text-align: center !important; 
     }
-
-    /* C'EST CETTE PARTIE QUI CORRIGE LA BARRE DÉFILANTE */
+    
+    /* Force les liens à rester sur une seule ligne horizontale */
     .nav-links { 
+        margin-top: 0 !important; 
         display: flex !important;
         flex-direction: row !important; 
-        flex-wrap: nowrap !important; /* Empêche le retour à la ligne */
-        overflow-x: auto; /* Active le défilement horizontal */
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        gap: 15px !important; 
         width: 100% !important;
-        gap: 8px !important; 
+        overflow-x: auto; 
         padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch; /* Défilement fluide sur mobile */
     }
 
-    .nav-links a { 
-        margin-left: 0 !important; 
-        background: #f0f4f7; 
-        padding: 6px 12px !important; 
-        border-radius: 4px; 
-        white-space: nowrap !important; /* Garde le texte sur une ligne */
-        font-size: 0.92rem !important;
+    .nav-links a {
+        font-size: 0.92rem !important; 
         font-weight: 600 !important;
+        margin-left: 0 !important;
+        white-space: nowrap !important;
+        padding: 5px 8px !important; 
+        background: #f0f4f7; 
+        border-radius: 4px;
     }
 
+    /* Ajustements visuels identiques à l'index */
+    .hero-text { font-size: 1.1rem !important; transform: rotate(0deg) !important; padding: 10px 15px; }
+    .hero h1 { font-size: 1.8rem; }
+
+    /* Ligne spécifique pour le titre de la page Analyses */
     .blog-header h1 { font-size: 2rem !important; }
         }
+        
     </style>
 </head>
 <body>
