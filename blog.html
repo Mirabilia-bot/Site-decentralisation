@@ -12,46 +12,54 @@
     <meta name="description" content="Découvrez les analyses de K. Gnimdou sur la gouvernance territoriale au Togo : Loi 2019-006, gestion par Cartographie et SIG, et guides pratiques pour les Collectivités territoriales.">
     
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; background: #f9f9f9; }
-        
-                /* Navigation Corrigée */
-        nav { 
-            background: white; 
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky; 
-            top: 0; 
-            z-index: 1100;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .logo { font-weight: 800; color: #1a3a5f; text-decoration: none; border-left: 4px solid #006a4e; padding-left: 10px; line-height: 1; }
-        .nav-links a { text-decoration: none; color: #1a3a5f; margin-left: 20px; font-weight: 600; }
+    /* Variables identiques à l'index */
+    :root { --primary: #1a3a5f; --secondary: #006a4e; --accent: #d4af37; --light: #fdfdfd; --text: #333; }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: #f9f9f9; line-height: 1.7; }
+    
+    /* Navigation - Identique à l'index */
+    nav { 
+        background: white; 
+        padding: 1.2rem 8%; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+        position: sticky; 
+        top: 0; 
+        z-index: 1000; 
+    }
+    
+    .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
+    .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
+    
+    .nav-links { display: flex; gap: 15px; }
+    .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
-        /* Header Blog */
-        .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
-        
-        /* Grille d'articles */
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card-category { background: #006a4e; color: white; padding: 5px 15px; font-size: 0.8rem; display: inline-block; margin: 20px 20px 0; border-radius: 20px; }
-        .card-content { padding: 20px; }
-        .card-title { color: #1a3a5f; margin: 0 0 10px; font-size: 1.3rem; }
-        .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; }
-        
-        /* Sidebar/Ressources */
-        .resources-section { background: #eee; padding: 40px 20px; border-radius: 10px; margin-top: 50px; }
-        
-        @media (max-width: 600px) {
-            .blog-header h1 { font-size: 1.8rem; }
-        }
+    /* Header Blog */
+    .blog-header { background: #1a3a5f; color: white; padding: 80px 8%; text-align: center; }
+    .blog-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    
+    /* Grille d'articles */
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    
+    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .card-category { background: var(--secondary); color: white; padding: 4px 12px; font-size: 0.75rem; display: inline-block; margin: 20px 20px 0; border-radius: 4px; text-transform: uppercase; font-weight: bold; align-self: flex-start; }
+    .card-content { padding: 20px; flex-grow: 1; }
+    .card-title { color: var(--primary); margin: 0 0 12px; font-size: 1.3rem; }
+    .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+    
+    /* Responsive Corrigé (Identique à l'index pour mobile) */
+    @media (max-width: 768px) { 
+        nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
+        .nav-links { margin-top: 0 !important; display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; justify-content: flex-start !important; gap: 10px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
+        .nav-links a { font-size: 0.85rem !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; white-space: nowrap; }
+        .blog-header h1 { font-size: 1.8rem; }
+    }
     </style>
+    
 </head>
 <body>
 
