@@ -8,25 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- CORE ENGINEERING --- */
-        html, body { height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; font-family: 'Inter', sans-serif; background: #f9f9f9; color: #2c3e50; line-height: 1.7; }
-        .content-wrapper { flex: 1 0 auto; }
-        footer { flex-shrink: 0; }
+        /* --- CORE STYLE (CLONE DE L'INDEX) --- */
+        :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .content-wrapper { flex: 1; }
 
-        /* --- NAVIGATION : REPRODUCTION STRICTE INDEX --- */
-        nav { 
-            background: white; 
-            padding: 1.2rem 8%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-
+        /* --- NAVIGATION : REPRODUCTION STRICTE --- */
+        nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        
         .logo { 
             font-family: sans-serif; 
             font-weight: 800; 
@@ -37,9 +28,8 @@
             border-left: 3px solid #006a4e; 
             padding-left: 10px; 
             text-decoration: none;
-            line-height: 1.2; /* Assure l'aération identique à l'index */
+            line-height: 1.2; /* L'interligne aéré de l'index */
         }
-
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
         .nav-links { display: flex; gap: 15px; }
@@ -47,48 +37,37 @@
 
         /* --- BLOG HEADER --- */
         .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
-        .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; margin: 0 0 10px 0; }
-        .blog-header p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-
-        /* --- GRILLE ARTICLES --- */
+        .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; margin-bottom: 10px; }
+        
+        /* --- CARDS & GRID --- */
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 12px; border: 1px solid #eee; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 4px solid #006633; }
+        .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; transition: 0.4s; }
+        .card:hover { transform: translateY(-5px); border-top: 4px solid var(--secondary); }
         .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.4rem; margin-bottom: 15px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; }
 
-        /* --- CONTACT : REPRODUCTION STRICTE INDEX --- */
+        /* --- CONTACT : CLONE STRICT --- */
         section { padding: 80px 8%; border-bottom: 1px solid #eee; }
-        .section-title { 
-            font-family: 'Crimson Pro', serif; 
-            font-size: 2.2rem; 
-            color: #00264d; 
-            margin-bottom: 40px; 
-            border-bottom: 3px solid #d4af37; 
-            display: inline-block; 
-        }
-
+        .section-title { font-family: 'Crimson Pro', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
         .contact-info { text-align: center; }
-        .contact-link { color: #00264d; text-decoration: none; font-weight: bold; }
 
-        /* --- MOBILE RESPONSIVE INDEX --- */
+        /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 768px) { 
             nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
             .nav-links { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
             .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
-            /* Highlight page Analyses */
             .nav-links a[href="blog.html"] { background: #1a3a5f; color: white; }
-            .blog-header h1 { font-size: 2rem; }
         }
 
-        footer { background: #00264d; color: #fff; padding: 40px 8% 20px; text-align: center; }
+        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="content-wrapper">
     <nav>
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;" class="logo">
+        <a href="index.html" class="logo">
             <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
             <div>
                 DÉCENTRALISATION <br>
@@ -97,6 +76,7 @@
         </a>
 
         <div class="nav-links">
+            <a href="index.html">Accueil</a>
             <a href="index.html#expertise">Expertise</a>
             <a href="blog.html">Analyses</a>
             <a href="index.html#ressources">Ressources</a>
@@ -106,34 +86,34 @@
     
     <header class="blog-header">
         <h1>Analyses & Perspectives</h1>
-        <p>Expertise territoriale et documentation technique pour les collectivités locales au Togo.</p>
+        <p>Expertise territoriale et documentation technique pour les collectivités locales.</p>
     </header>
 
     <div class="container">
-        <article class="card">
-            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Analyse</span>
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Analyse</span>
             <h3>L'impact des SIG dans la gestion territoriale</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Comment l'outil cartographique révolutionne la levée de l'impôt foncier et la planification urbaine au Togo.</p>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Comment l'outil cartographique révolutionne la levée de l'impôt foncier au Togo.</p>
             <a href="article-sig-gestion.html" class="card-link">Lire l'article</a>
-        </article>
+        </div>
 
-        <article class="card">
-            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Guide</span>
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Guide</span>
             <h3>Réussir son PDC (Plan de Développement)</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens et des élus locaux.</p>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
             <a href="article-pdc-communal.html" class="card-link">Consulter le guide</a>
-        </article>
+        </div>
 
-        <article class="card">
-            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Juridique</span>
-            <h3>L’impact de la Loi n° 2019-006 sur les Communes</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Analyse approfondie du cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Juridique</span>
+            <h3>L’impact de la Loi n° 2019-006</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Analyse du cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
             <a href="article-loi-2019.html" class="card-link">Lire l'analyse</a>
-        </article>
+        </div>
     </div>
 </div>
 
-<section id="contact" style="text-align: center;"> 
+<section id="contact"> 
     <h2 class="section-title">Contact & Consultance</h2>
     <div class="contact-info">
         <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
@@ -142,9 +122,9 @@
     </div>
 </section>
     
-<footer style="background: #00264d; color: #fff; padding: 25px 8% 15px; text-align: center;">
+<footer>
     <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
-    <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.4;">
         Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
     </p>
     <div style="font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
