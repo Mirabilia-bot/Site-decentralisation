@@ -64,50 +64,46 @@
         .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; }
 
-        @media (max-width: 768px) { 
-    /* Force l'empilement vertical du nav */
+        /* --- BLOC À COPIER --- */
+@media (max-width: 768px) { 
     nav { 
         flex-direction: column !important; 
         align-items: flex-start !important; 
         padding: 15px 5% !important;
         gap: 12px !important;
     } 
-    .res-item { 
-        flex-direction: column !important; 
-        align-items: center !important; 
-        text-align: center !important; 
+
+    .logo {
+        flex-shrink: 0 !important; /* Empêche le logo de bouger ou de rétrécir */
     }
     
-    /* Force les liens à rester sur une seule ligne horizontale */
     .nav-links { 
-        margin-top: 0 !important; 
+        margin-top: 5px !important; 
         display: flex !important;
         flex-direction: row !important; 
-        flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important; /* Force la ligne unique */
         justify-content: flex-start !important;
-        gap: 15px !important; 
+        gap: 10px !important; 
         width: 100% !important;
-        overflow-x: auto; 
-        padding-bottom: 5px;
+        overflow-x: auto !important; /* Active le défilement horizontal */
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links a {
         font-size: 0.92rem !important; 
         font-weight: 600 !important;
         margin-left: 0 !important;
-        white-space: nowrap !important;
-        padding: 5px 8px !important; 
+        white-space: nowrap !important; /* Empêche le texte de revenir à la ligne */
+        padding: 6px 12px !important; 
         background: #f0f4f7; 
         border-radius: 4px;
+        flex-shrink: 0 !important; /* Garde la forme des boutons */
     }
 
-    /* Ajustements visuels identiques à l'index */
-    .hero-text { font-size: 1.1rem !important; transform: rotate(0deg) !important; padding: 10px 15px; }
-    .hero h1 { font-size: 1.8rem; }
-
-    /* Ligne spécifique pour le titre de la page Analyses */
     .blog-header h1 { font-size: 2rem !important; }
-        }
+}
+/* --- FIN DU BLOC --- */
         
     </style>
 </head>
@@ -115,12 +111,12 @@
 
 <div class="content-wrapper">
     <nav>
-    <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;" class="logo">
-            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-            <div>
-                DÉCENTRALISATION <br>
-                <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold;">AU TOGO</span>
-            </div>
+    <a href="index.html" class="logo">
+        <span style="font-size: 2rem; color: #006a4e; flex-shrink: 0;">🏛️</span> 
+        <div style="line-height: 1.1; display: flex; flex-direction: column;">
+            <span style="font-size: 1rem; font-weight: 800;">DÉCENTRALISATION</span>
+            <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold; margin-top: -2px;">AU TOGO</span>
+        </div>
     </a>
 
     <div class="nav-links">
