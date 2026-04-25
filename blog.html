@@ -4,37 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analyses & Perspectives | K. Gnimdou - Expert Décentralisation</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
-    <meta name="theme-color" content="#1a3a5f">
+    <link rel="icon" type="image/png" href="icon.png?v=1">
+    <meta name="theme-color" content="#00264d">
+
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. Structure pour bloquer le footer en bas */
+        /* STYLE ISSU DE VOTRE INDEX */
+        :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Structure pour bloquer le footer en bas sans changer le design */
         html, body { height: 100%; margin: 0; }
-        body { display: flex; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; background: #f9f9f9; }
+        body { display: flex; flex-direction: column; font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; }
         .content-wrapper { flex: 1 0 auto; }
         footer { flex-shrink: 0; }
 
-        /* 2. Navigation harmonisée */
-        nav { background: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1100; width: 100%; box-sizing: border-box; }
-        .logo { text-decoration: none; display: flex; align-items: center; border-left: 4px solid #006a4e; padding-left: 15px; }
-        .logo-sub { color: #fecb00; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; }
-        .nav-links a { text-decoration: none; color: #1a3a5f; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
+        /* Navigation IDENTIQUE À L'INDEX */
+        nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
+        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
+        .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
-        /* 3. Contenu et Blog */
-        .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-5px); }
-        .card-category { background: #006a4e; color: white; padding: 5px 15px; font-size: 0.75rem; display: inline-block; margin: 20px 20px 0; border-radius: 20px; text-transform: uppercase; font-weight: bold; }
-        .card-content { padding: 20px; }
-        .card-title { color: #1a3a5f; margin: 0 0 10px; font-size: 1.25rem; font-weight: 700; }
-        .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; }
+        /* Style spécifique Blog */
+        .blog-header { background: #1a3a5f; color: white; padding: 60px 8%; text-align: center; }
+        .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        /* Cartes d'analyses */
+        .card { background: white; padding: 30px 20px; border-radius: 12px; border: 1px solid #eee; transition: 0.4s; display: flex; flex-direction: column; }
+        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 4px solid var(--secondary); }
+        .card-category { color: var(--secondary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .card h3 { font-family: 'Crimson Pro', serif; color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { color: #666; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .card-link { color: var(--secondary); font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; }
 
-        /* 4. Responsive mobile strict */
-        @media (max-width: 768px) {
-            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; }
-            .nav-links { display: flex !important; overflow-x: auto; width: 100%; gap: 10px; padding-bottom: 5px; margin-left: 0 !important; }
-            .nav-links a { margin-left: 0 !important; white-space: nowrap; background: #f0f4f7; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; }
+        /* Bloc Ressources IDENTIQUE À L'INDEX (Style res-item) */
+        .res-container { padding: 40px 8%; background: #f4f7f9; }
+        .res-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .download { color: var(--secondary); font-weight: bold; text-decoration: none; border: 1px solid var(--secondary); padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
+
+        /* Responsive MOBILE IDENTIQUE À L'INDEX */
+        @media (max-width: 768px) { 
+            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
+            .nav-links { margin-top: 0 !important; display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
+            .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
+            .res-item { flex-direction: column !important; text-align: center !important; gap: 15px; }
         }
     </style>
 </head>
@@ -43,14 +60,14 @@
 <div class="content-wrapper">
     <nav>
         <a href="index.html" class="logo">
-            <span style="font-size: 2.2rem; color: #1a3a5f; margin-right: 12px;">🏛️</span> 
-            <div style="line-height: 1.1;">
-                <span style="font-weight: 800; color: #1a3a5f; font-size: 1.1rem;">DÉCENTRALISATION</span><br>
+            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
+            <div>
+                DÉCENTRALISATION <br>
                 <span class="logo-sub">AU TOGO</span>
             </div>
         </a>
+
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
             <a href="index.html#expertise">Expertise</a>
             <a href="blog.html">Analyses</a>
             <a href="index.html#ressources">Ressources</a>
@@ -60,65 +77,54 @@
     
     <header class="blog-header">
         <h1>Analyses & Perspectives</h1>
-        <p>Gouvernance territoriale et outils de développement local</p>
+        <p>Expertise territoriale et accompagnement des collectivités locales</p>
     </header>
 
     <div class="container">
         <article class="card">
             <span class="card-category">Analyse</span>
-            <div class="card-content">
-                <h3 class="card-title">L'impact des SIG dans la gestion territoriale</h3>
-                <p class="card-text">Comment l'outil cartographique révolutionne la levée de l'impôt foncier et la planification urbaine au Togo.</p>
-                <a href="article-sig-gestion.html" style="color:#006a4e; font-weight:bold; text-decoration:none;">Lire l'article →</a>
-            </div>
+            <h3>L'impact des SIG dans la gestion territoriale</h3>
+            <p>Comment l'outil cartographique révolutionne la levée de l'impôt foncier et la planification urbaine au Togo.</p>
+            <a href="article-sig-gestion.html" class="card-link">Lire l'article</a>
         </article>
 
         <article class="card">
             <span class="card-category">Guide</span>
-            <div class="card-content">
-                <h3 class="card-title">Réussir son PDC (Plan de Développement)</h3>
-                <p class="card-text">Les 5 étapes clés pour une planification stratégique efficace au service des collectivités territoriales.</p>
-                <a href="article-pdc-communal.html" style="color:#006a4e; font-weight:bold; text-decoration:none;">Lire l'article →</a>
-            </div>
+            <h3>Réussir son PDC (Plan de Développement)</h3>
+            <p>Les 5 étapes clés pour une planification stratégique efficace au service des citoyens et des élus locaux.</p>
+            <a href="article-pdc-communal.html" class="card-link">Consulter le guide</a>
         </article>
 
-        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column;">
-            <span style="color: #d4af37; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;">Juridique</span>
-            <h2 style="color: #1a3a5f; margin: 0 0 10px; font-size: 1.25rem; font-weight: 700;">L’impact de la Loi n° 2019-006 sur les Communes</h2>
-            <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px; line-height: 1.6;">Analyse approfondie du nouveau cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
-            <a href="article-loi-2019.html" style="color: #006a4e; font-weight: bold; text-decoration: none; margin-top: auto;">Lire l'article →</a>
-        </div>
+        <article class="card">
+            <span class="card-category">Juridique</span>
+            <h3>L’impact de la Loi n° 2019-006 sur les Communes</h3>
+            <p>Analyse du cadre législatif et des défis majeurs de l'autonomie financière des collectivités territoriales.</p>
+            <a href="article-loi-2019.html" class="card-link">Lire l'analyse</a>
+        </article>
     </div>
 
-    <section class="container">
-        <div style="background: #ffffff; padding: 40px; border-radius: 15px; border: 1px solid #e0e0e0; margin-top: 20px;">
-            <h2 style="color: #1a3a5f; margin-bottom: 20px; font-size: 1.5rem;">📚 Ressources à consulter</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">📄</span> 
-                    <a href="documents/loi-decentralisation.pdf" target="_blank" style="color: #006a4e; text-decoration: none; font-weight: 700; font-size: 1rem;">Loi sur la Décentralisation (Consulter)</a>
-                </li>
-                <li style="display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">📊</span> 
-                    <a href="documents/guide-georef-gnimdou.pdf" target="_blank" style="color: #006a4e; text-decoration: none; font-weight: 700; font-size: 1rem;">Modèle de rapport de géoréférencement (Consulter)</a>
-                </li>
-            </ul>
+    <section class="res-container">
+        <h2 style="font-family: 'Crimson Pro', serif; color: var(--primary); margin-bottom: 25px;">Documents de Référence</h2>
+        <div class="res-item">
+            <div><strong>Loi sur la Décentralisation (Togo)</strong><br><small>Loi n° 2019-006 - Cadre juridique officiel</small></div>
+            <a href="loi-decentralisation.pdf" class="download" target="_blank">Consulter</a>
+        </div>
+        <div class="res-item">
+            <div><strong>Guide du Géoréférencement v1.0</strong><br><small>Par K. Gnimdou - Manuel technique SIG</small></div>
+            <a href="guide-georef-gnimdou.pdf" class="download" target="_blank">Consulter</a>
         </div>
     </section>
 </div>
 
-<footer style="background: #00264d; color: #ffffff; padding: 35px 8%; text-align: center; border-top: 4px solid #d4af37;">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
-        <span style="font-size: 1.2rem; font-weight: bold; letter-spacing: 0.5px;">K. Gnimdou M.</span>
-        <a href="https://wa.me/22893019105" target="_blank" style="text-decoration: none; background: #25D366; color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; gap: 8px;">
-            <span>💬</span> WhatsApp
-        </a>
+<footer>
+    <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; letter-spacing: 1px;">
+        K. Gnimdou M.
     </div>
-    <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 10px; font-style: italic;">
-        Spécialiste SIG & Consultant en Gouvernance Territoriale
+    <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+        Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
     </p>
-    <div style="font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 15px;">
-        &copy; KGM 2026 - Lomé, Togo. Tous droits réservés.
+    <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.4; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+        &copy; KGM - K. Gnimdou M. 2026 - Togo. Tous droits réservés.
     </div>
 </footer>
 
