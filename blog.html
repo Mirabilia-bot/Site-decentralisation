@@ -14,9 +14,31 @@
         .content-wrapper { flex: 1 0 auto; }
         footer { flex-shrink: 0; }
 
-        /* NAV STYLES (Identique Index) */
-        nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; }
+        nav { 
+    background: white; 
+    padding: 1.2rem 8%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    width: 100%; /* Fixe la largeur pour éviter le mouvement */
+    box-sizing: border-box; /* Garde le padding à l'intérieur de la largeur */
+}
+
+.logo { 
+    font-family: sans-serif; 
+    font-weight: 800; 
+    color: #1a3a5f; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    border-left: 3px solid #006a4e; 
+    padding-left: 10px; 
+    text-decoration: none; /* Évite le soulignement bleu */
+}
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; margin-left: 15px; }
 
