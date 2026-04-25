@@ -16,7 +16,7 @@
             color: var(--text); 
             background: var(--light); 
             line-height: 1.7; 
-            padding-top: 80px; /* Espace pour compenser la tête fixe */
+            padding-top: 85px; /* Compense la tête fixe pour ne pas cacher le contenu */
         }
 
         /* --- TÊTE IMMOBILE (FIXÉE) --- */
@@ -27,30 +27,47 @@
             justify-content: space-between; 
             align-items: center; 
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-            position: fixed; /* La tête ne bouge plus du tout */
+            position: fixed; 
             top: 0; 
             left: 0;
             width: 100%;
             z-index: 2000; 
         }
         
-        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; line-height: 1.2; }
+        .logo { 
+            font-family: sans-serif; 
+            font-weight: 800; 
+            color: #1a3a5f; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            border-left: 3px solid #006a4e; 
+            padding-left: 10px; 
+            text-decoration: none; 
+            line-height: 1.1; 
+        }
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
-        /* --- BLOG CONTENT --- */
+        /* --- HEADER BLEU (TITRE UNE LIGNE) --- */
         .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
-        .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; margin-bottom: 10px; }
+        .blog-header h1 { 
+            font-family: 'Crimson Pro', serif; 
+            font-size: 2.8rem; 
+            margin-bottom: 10px; 
+            white-space: nowrap; /* Force une seule ligne */
+        }
         
+        /* --- GRILLE ARTICLES (CONSERVÉE) --- */
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; transition: 0.4s; }
         .card:hover { transform: translateY(-5px); border-top: 4px solid var(--secondary); }
         .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.4rem; margin-bottom: 15px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; }
 
-        /* --- SECTION CONTACT (TITRE SUR UNE LIGNE) --- */
+        /* --- SECTION CONTACT (TITRE UNE LIGNE) --- */
         section { padding: 80px 8%; border-bottom: 1px solid #eee; text-align: center; }
         .section-title { 
             font-family: 'Crimson Pro', serif; 
@@ -59,19 +76,22 @@
             margin-bottom: 40px; 
             border-bottom: 3px solid var(--accent); 
             display: inline-block; 
-            white-space: nowrap; /* Empêche le retour à la ligne du titre */
+            white-space: nowrap; /* Force une seule ligne */
+            padding-bottom: 5px;
         }
         .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
 
-        /* --- RESPONSIVE MOBILE --- */
+        /* --- FOOTER --- */
+        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) { 
             nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
             .nav-links { display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
             .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
-            .section-title { font-size: 1.8rem; } /* Réduction légère pour mobile si besoin */
+            .blog-header h1 { font-size: 2rem; white-space: normal; } /* Autorise le retour à la ligne sur très petit mobile pour le header */
+            .section-title { font-size: 1.7rem; white-space: normal; }
         }
-
-        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
     </style>
 </head>
 <body>
@@ -82,49 +102,63 @@
             <div>
                 DÉCENTRALISATION <br>
                 <span class="logo-sub">AU TOGO</span>
-<style>
-    /* FIXATION DE LA TÊTE */
-    nav { 
-        position: fixed; 
-        top: 0; 
-        width: 100%; 
-        z-index: 2000; 
-        background: white; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 1.2rem 8%;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    }
-    body { padding-top: 90px; } /* Pour ne pas cacher le haut sous la tête fixe */
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#expertise">Expertise</a>
+            <a href="blog.html">Analyses</a>
+            <a href="index.html#ressources">Ressources</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <header class="blog-header">
+        <h1>Analyses & Perspectives</h1>
+        <p>Expertise territoriale et documentation technique.</p>
+    </header>
 
-    /* TITRE CONTACT SUR UNE LIGNE */
-    .section-title { 
-        white-space: nowrap; 
-        font-family: 'Crimson Pro', serif; 
-        border-bottom: 3px solid #d4af37; 
-    }
+    <div class="container">
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Analyse</span>
+            <h3>L'impact des SIG dans la gestion territoriale</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Comment l'outil cartographique révolutionne la levée de l'impôt foncier au Togo...</p>
+            <a href="article-sig-gestion.html" class="card-link">Lire l'article</a>
+        </div>
 
-    /* HEADER TEXTE UNE LIGNE */
-    .blog-header h1 { white-space: nowrap; }
-</style>
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Guide</span>
+            <h3>Réussir son PDC (Plan de Développement)</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
+            <a href="article-pdc-communal.html" class="card-link">Lire le guide</a>
+        </div>
 
-<a href="index.html" class="logo" style="text-decoration:none; border-left:3px solid #006a4e; padding-left:10px; display:flex; align-items:center; gap:10px;">
-    <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-    <div style="font-family:sans-serif; font-weight:800; color:#1a3a5f; line-height:1.1;">
-        DÉCENTRALISATION <br>
-        <span style="color:#fecb00; font-size:0.8rem;">AU TOGO</span>
+        <div class="card">
+            <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Juridique</span>
+            <h3>L’impact de la Loi n° 2019-006</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Analyse du cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
+            <a href="article-loi-2019.html" class="card-link">Lire l'analyse</a>
+        </div>
     </div>
-</a>
 
-<footer>
-    <div style="font-weight:bold; margin-bottom:5px;">K. Gnimdou M.</div>
-    <p style="font-size:0.85rem; opacity:0.9;">
-        Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
-    </p>
-    <div style="margin-top:15px; font-size:0.75rem; opacity:0.5;">
-        &copy; KGM - K. Gnimdou M. 2026 - Togo.
-    </div>
-</footer>
+    <section id="contact"> 
+        <h2 class="section-title">Contact & Consultance</h2>
+        <div class="contact-info">
+            <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
+            <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" class="contact-link">+228 93 01 91 05</a></p>
+            <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" class="contact-link">Démarrer une discussion</a></p>
+        </div>
+    </section>
+    
+    <footer>
+        <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
+        <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+            Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
+        </p>
+        <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            &copy; KGM - K. Gnimdou M. 2026 - Togo. Tous droits réservés.
+        </div>
+    </footer>
+
 </body>
 </html>
