@@ -8,59 +8,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- CORE STYLE (CLONE DE L'INDEX) --- */
+        /* --- COPIE CONFORME DES RACINES ET STYLES DE L'INDEX --- */
         :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
         
         .content-wrapper { flex: 1; }
 
-        /* --- NAVIGATION : REPRODUCTION STRICTE --- */
-        nav { background: white; padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        
-        .logo { 
-            font-family: sans-serif; 
-            font-weight: 800; 
-            color: #1a3a5f; 
+        /* --- NAVIGATION : CLONE EXACT DE VOTRE INDEX AVEC FIXATION --- */
+        nav { 
+            background: white; 
+            padding: 1.2rem 8%; 
             display: flex; 
+            justify-content: space-between; 
             align-items: center; 
-            gap: 10px; 
-            border-left: 3px solid #006a4e; 
-            padding-left: 10px; 
-            text-decoration: none;
-            line-height: 1.2; /* L'interligne aéré de l'index */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            position: sticky; /* C'est ici que ça "cale" */
+            top: 0; 
+            z-index: 1000; 
         }
+        
+        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
-        /* --- BLOG HEADER --- */
+        /* --- STYLE PROPRE AU BLOG --- */
         .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
         .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; margin-bottom: 10px; }
         
-        /* --- CARDS & GRID --- */
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; transition: 0.4s; }
         .card:hover { transform: translateY(-5px); border-top: 4px solid var(--secondary); }
         .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.4rem; margin-bottom: 15px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; }
 
-        /* --- CONTACT : CLONE STRICT --- */
+        /* --- SECTION CONTACT : CLONE EXACT DE VOTRE INDEX --- */
         section { padding: 80px 8%; border-bottom: 1px solid #eee; }
         .section-title { font-family: 'Crimson Pro', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
         .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
         .contact-info { text-align: center; }
 
-        /* --- RESPONSIVE MOBILE --- */
+        /* --- FOOTER --- */
+        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
+
+        /* --- RESPONSIVE : REPRODUCTION DU COMPORTEMENT INDEX --- */
         @media (max-width: 768px) { 
-            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
+            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; position: sticky !important; top: 0 !important; } 
             .nav-links { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
             .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
             .nav-links a[href="blog.html"] { background: #1a3a5f; color: white; }
         }
-
-        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
     </style>
 </head>
 <body>
@@ -86,7 +85,7 @@
     
     <header class="blog-header">
         <h1>Analyses & Perspectives</h1>
-        <p>Expertise territoriale et documentation technique pour les collectivités locales.</p>
+        <p>Expertise technique et gouvernance locale au Togo.</p>
     </header>
 
     <div class="container">
@@ -113,7 +112,7 @@
     </div>
 </div>
 
-<section id="contact"> 
+<section id="contact" style="text-align: center;"> 
     <h2 class="section-title">Contact & Consultance</h2>
     <div class="contact-info">
         <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
