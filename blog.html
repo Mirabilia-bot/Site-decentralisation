@@ -8,14 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- COPIE CONFORME DES RACINES ET STYLES DE L'INDEX --- */
         :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
         
-        .content-wrapper { flex: 1; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--text); 
+            background: var(--light); 
+            line-height: 1.7; 
+            padding-top: 80px; /* Espace pour compenser la tête fixe */
+        }
 
-        /* --- NAVIGATION : CLONE EXACT DE VOTRE INDEX AVEC FIXATION --- */
+        /* --- TÊTE IMMOBILE (FIXÉE) --- */
         nav { 
             background: white; 
             padding: 1.2rem 8%; 
@@ -23,18 +27,20 @@
             justify-content: space-between; 
             align-items: center; 
             box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-            position: sticky; /* C'est ici que ça "cale" */
+            position: fixed; /* La tête ne bouge plus du tout */
             top: 0; 
-            z-index: 1000; 
+            left: 0;
+            width: 100%;
+            z-index: 2000; 
         }
         
-        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; }
+        .logo { font-family: sans-serif; font-weight: 800; color: #1a3a5f; display: flex; align-items: center; gap: 10px; border-left: 3px solid #006a4e; padding-left: 10px; text-decoration: none; line-height: 1.2; }
         .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
 
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
-        /* --- STYLE PROPRE AU BLOG --- */
+        /* --- BLOG CONTENT --- */
         .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
         .blog-header h1 { font-family: 'Crimson Pro', serif; font-size: 2.8rem; margin-bottom: 10px; }
         
@@ -44,27 +50,32 @@
         .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.4rem; margin-bottom: 15px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; }
 
-        /* --- SECTION CONTACT : CLONE EXACT DE VOTRE INDEX --- */
-        section { padding: 80px 8%; border-bottom: 1px solid #eee; }
-        .section-title { font-family: 'Crimson Pro', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; border-bottom: 3px solid var(--accent); display: inline-block; }
-        .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
-        .contact-info { text-align: center; }
-
-        /* --- FOOTER --- */
-        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
-
-        /* --- RESPONSIVE : REPRODUCTION DU COMPORTEMENT INDEX --- */
-        @media (max-width: 768px) { 
-            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; position: sticky !important; top: 0 !important; } 
-            .nav-links { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
-            .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
-            .nav-links a[href="blog.html"] { background: #1a3a5f; color: white; }
+        /* --- SECTION CONTACT (TITRE SUR UNE LIGNE) --- */
+        section { padding: 80px 8%; border-bottom: 1px solid #eee; text-align: center; }
+        .section-title { 
+            font-family: 'Crimson Pro', serif; 
+            font-size: 2.2rem; 
+            color: var(--primary); 
+            margin-bottom: 40px; 
+            border-bottom: 3px solid var(--accent); 
+            display: inline-block; 
+            white-space: nowrap; /* Empêche le retour à la ligne du titre */
         }
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) { 
+            nav { flex-direction: column !important; align-items: flex-start !important; padding: 15px 5% !important; gap: 12px !important; } 
+            .nav-links { display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; overflow-x: auto; padding-bottom: 5px; }
+            .nav-links a { font-size: 0.92rem !important; font-weight: 600 !important; white-space: nowrap !important; padding: 5px 8px !important; background: #f0f4f7; border-radius: 4px; }
+            .section-title { font-size: 1.8rem; } /* Réduction légère pour mobile si besoin */
+        }
+
+        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
     </style>
 </head>
 <body>
 
-<div class="content-wrapper">
     <nav>
         <a href="index.html" class="logo">
             <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
@@ -73,11 +84,10 @@
                 <span class="logo-sub">AU TOGO</span>
             </div>
         </a>
-
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="index.html#expertise">Expertise</a>
-            <a href="blog.html">Analyses</a>
+            <a href="blog.html" style="color: var(--secondary);">Analyses</a>
             <a href="index.html#ressources">Ressources</a>
             <a href="#contact">Contact</a>
         </div>
@@ -85,7 +95,7 @@
     
     <header class="blog-header">
         <h1>Analyses & Perspectives</h1>
-        <p>Expertise technique et gouvernance locale au Togo.</p>
+        <p>Expertise territoriale et documentation technique.</p>
     </header>
 
     <div class="container">
@@ -99,37 +109,34 @@
         <div class="card">
             <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Guide</span>
             <h3>Réussir son PDC (Plan de Développement)</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace.</p>
             <a href="article-pdc-communal.html" class="card-link">Consulter le guide</a>
         </div>
 
         <div class="card">
             <span style="color: #006a4e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Juridique</span>
             <h3>L’impact de la Loi n° 2019-006</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Analyse du cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Analyse du cadre législatif et des défis de l'autonomie financière.</p>
             <a href="article-loi-2019.html" class="card-link">Lire l'analyse</a>
         </div>
     </div>
-</div>
 
-<section id="contact" style="text-align: center;"> 
-    <h2 class="section-title">Contact & Consultance</h2>
-    <div class="contact-info">
-        <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
-        <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" class="contact-link">+228 93 01 91 05</a></p>
-        <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" class="contact-link">Démarrer une discussion</a></p>
-    </div>
-</section>
+    <section id="contact"> 
+        <h2 class="section-title">Contact & Consultance</h2>
+        <div class="contact-info">
+            <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
+            <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" class="contact-link">+228 93 01 91 05</a></p>
+            <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" class="contact-link">Démarrer une discussion</a></p>
+        </div>
+    </section>
     
-<footer>
-    <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
-    <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-        Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
-    </p>
-    <div style="font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-        &copy; KGM - K. Gnimdou M. 2026 - Togo.
-    </div>
-</footer>
+    <footer>
+        <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
+        <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px;">Spécialiste SIG et gestionnaire des collectivités locales</p>
+        <div style="font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            &copy; KGM - K. Gnimdou M. 2026 - Togo.
+        </div>
+    </footer>
 
 </body>
 </html>
