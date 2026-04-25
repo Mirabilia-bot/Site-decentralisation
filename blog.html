@@ -42,12 +42,37 @@
         .card-text { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
         .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; }
 
-        /* RESPONSIVE MOBILE */
         @media (max-width: 768px) {
-            nav { flex-direction: column; align-items: flex-start; padding: 15px 5%; gap: 10px; }
-            .nav-links { display: flex; width: 100%; overflow-x: auto; gap: 10px; }
-            .nav-links a { margin-left: 0; background: #f0f4f7; padding: 5px 10px; border-radius: 4px; white-space: nowrap; }
-            .blog-header h1 { font-size: 2rem; }
+    nav { 
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        padding: 15px 5% !important; 
+        gap: 12px !important; 
+    }
+
+    /* C'EST CETTE PARTIE QUI CORRIGE LA BARRE DÉFILANTE */
+    .nav-links { 
+        display: flex !important;
+        flex-direction: row !important; 
+        flex-wrap: nowrap !important; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Active le défilement horizontal */
+        width: 100% !important;
+        gap: 8px !important; 
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch; /* Défilement fluide sur mobile */
+    }
+
+    .nav-links a { 
+        margin-left: 0 !important; 
+        background: #f0f4f7; 
+        padding: 6px 12px !important; 
+        border-radius: 4px; 
+        white-space: nowrap !important; /* Garde le texte sur une ligne */
+        font-size: 0.92rem !important;
+        font-weight: 600 !important;
+    }
+
+    .blog-header h1 { font-size: 2rem !important; }
         }
     </style>
 </head>
@@ -55,17 +80,21 @@
 
 <div class="content-wrapper">
     <nav>
-        <a href="index.html" class="logo">
-            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-            <div>DÉCENTRALISATION <br><span class="logo-sub">AU TOGO</span></div>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="index.html#expertise">Expertise</a>
-            <a href="blog.html">Analyses</a>
-            <a href="index.html#ressources">Ressources</a>
-            <a href="index.html#contact">Contact</a>
+    <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;" class="logo">
+        <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
+        <div>
+            DÉCENTRALISATION <br>
+            <span class="logo-sub" style="color: #fecb00; font-size: 0.8rem; font-weight: bold;">AU TOGO</span>
         </div>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#expertise">Expertise</a>
+        <a href="blog.html">Analyses</a>
+        <a href="index.html#ressources">Ressources</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
     </nav>
     
     <header class="blog-header">
