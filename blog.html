@@ -33,21 +33,28 @@
             width: 100%;
             z-index: 2000; 
         }
-        
         .logo { 
-            font-family: sans-serif; 
-            font-weight: 800; 
-            color: #1a3a5f; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            border-left: 3px solid #006a4e; 
-            padding-left: 10px; 
-            text-decoration: none; 
-            line-height: 1.1; 
-        }
-        .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
+    font-family: sans-serif; 
+    font-weight: 800; 
+    color: #1a3a5f; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    border-left: 3px solid #006a4e; 
+    padding-left: 10px; 
+    text-decoration: none; /* Pour enlever le soulignement bleu du lien */
+}
 
+.logo div { 
+    line-height: 1.1; /* Indispensable pour que "AU TOGO" ne soit pas trop loin en dessous */
+}
+
+.logo-sub { 
+    font-size: 0.8rem; 
+    color: #fecb00; 
+    font-weight: bold; 
+}
+        
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
 
@@ -98,11 +105,11 @@
 
     <nav>
         <a href="index.html" class="logo">
-            <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
-            <div>
-                DÉCENTRALISATION <br>
-                <span class="logo-sub">AU TOGO</span>
-            </div>
+    <span style="font-size: 2rem; color: #006a4e;">🏛️</span> 
+    <div>
+        DÉCENTRALISATION <br>
+        <span class="logo-sub">AU TOGO</span>
+    </div>
         </a>
         <div class="nav-links">
             <a href="index.html">Accueil</a>
