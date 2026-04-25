@@ -4,87 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analyses & Perspectives | K. Gnimdou</title>
-    <link rel="icon" type="image/png" href="icon.png?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root { --primary: #00264d; --secondary: #006633; --accent: #d4af37; --light: #fdfdfd; --text: #2c3e50; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            color: var(--text); 
-            background: var(--light); 
-            line-height: 1.7; 
-            padding-top: 85px; /* Évite que le contenu soit caché sous la tête fixe */
-        }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.7; padding-top: 100px; }
 
-        /* --- NAVIGATION FIXE (IMMOBILE) --- */
+        /* --- TÊTE FIXE (IMMOBILE) --- */
         nav { 
             background: white; 
-            padding: 1.2rem 8%; 
+            padding: 1rem 8%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
             position: fixed; 
             top: 0; 
-            left: 0;
-            width: 100%;
+            left: 0; 
+            width: 100%; 
             z-index: 2000; 
         }
         
+        /* LOGO SANS IMAGE EXTERNE POUR ÉVITER LES ERREURS */
         .logo { 
             display: flex; 
             align-items: center; 
-            gap: 10px; 
-            border-left: 3px solid #006a4e; 
-            padding-left: 10px; 
+            gap: 12px; 
             text-decoration: none; 
+            border-left: 4px solid var(--secondary); 
+            padding-left: 12px; 
         }
-        .logo img { height: 40px; width: auto; }
-        .logo-text { font-family: sans-serif; font-weight: 800; color: #1a3a5f; line-height: 1.1; }
-        .logo-sub { font-size: 0.8rem; color: #fecb00; font-weight: bold; }
+        .logo-icon { font-size: 2.2rem; }
+        .logo-text { font-family: sans-serif; font-weight: 900; color: #1a3a5f; line-height: 1.1; font-size: 1.1rem; }
+        .logo-sub { color: #fecb00; font-size: 0.85rem; font-weight: 800; display: block; }
 
-        .nav-links { display: flex; gap: 15px; }
-        .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #1a3a5f; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
 
-        /* --- HEADER BLEU (CONTENU FIDÈLE) --- */
-        .blog-header { background: #1a3a5f; color: white; padding: 60px 20px; text-align: center; }
-        .blog-header h1 { 
+        /* --- HEADER BLEU --- */
+        .header-section { background: #1a3a5f; color: white; padding: 70px 20px; text-align: center; }
+        .header-section h1 { 
             font-family: 'Crimson Pro', serif; 
             font-size: 2.8rem; 
+            white-space: nowrap; 
             margin-bottom: 10px; 
-            white-space: nowrap; /* Force une seule ligne */
         }
-        
-        /* --- GRILLE ARTICLES --- */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; }
-        .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.4rem; margin-bottom: 15px; }
-        .card-link { color: #006a4e; font-weight: bold; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; }
 
-        /* --- SECTION CONTACT (TITRE UNE LIGNE) --- */
-        section { padding: 80px 8%; text-align: center; border-bottom: 1px solid #eee; }
+        /* --- GRILLE --- */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee; display: flex; flex-direction: column; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-top: 5px solid var(--secondary); }
+        .card h3 { font-family: 'Crimson Pro', serif; color: #1a3a5f; font-size: 1.5rem; margin-bottom: 15px; }
+        .card-link { color: var(--secondary); font-weight: 800; text-decoration: none; border-bottom: 2px solid #fecb00; align-self: flex-start; margin-top: auto; padding-top: 15px; }
+
+        /* --- CONTACT --- */
+        #contact { padding: 80px 8%; text-align: center; background: white; }
         .section-title { 
             font-family: 'Crimson Pro', serif; 
-            font-size: 2.2rem; 
+            font-size: 2.3rem; 
             color: var(--primary); 
-            margin-bottom: 40px; 
-            border-bottom: 3px solid var(--accent); 
+            border-bottom: 4px solid var(--accent); 
             display: inline-block; 
-            white-space: nowrap; /* Force une seule ligne */
-            padding-bottom: 5px;
+            white-space: nowrap; 
+            margin-bottom: 40px; 
+            padding-bottom: 8px;
         }
+        .contact-info p { margin: 12px 0; font-size: 1.1rem; }
 
-        /* --- FOOTER (INFOS ORIGINALES) --- */
-        footer { background: var(--primary); color: #fff; padding: 40px 8% 20px; text-align: center; }
+        /* --- FOOTER --- */
+        footer { background: var(--primary); color: white; padding: 50px 8% 30px; text-align: center; }
+        .footer-name { font-family: 'Crimson Pro', serif; font-size: 1.4rem; font-weight: bold; margin-bottom: 10px; }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) { 
-            nav { flex-direction: column; padding: 15px 5%; gap: 12px; } 
-            .nav-links { gap: 8px; overflow-x: auto; width: 100%; justify-content: center; }
-            .blog-header h1, .section-title { white-space: normal; font-size: 1.8rem; }
+            nav { flex-direction: column; padding: 15px; } 
+            .nav-links { gap: 10px; margin-top: 10px; font-size: 0.8rem; }
+            .header-section h1, .section-title { white-space: normal; font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -92,7 +89,8 @@
 
     <nav>
         <a href="index.html" class="logo">
-            <img src="https://ilia-bot.github.io/logo.png" alt="Logo"> <div class="logo-text">
+            <span class="logo-icon">🏛️</span>
+            <div class="logo-text">
                 DÉCENTRALISATION <br>
                 <span class="logo-sub">AU TOGO</span>
             </div>
@@ -106,41 +104,47 @@
         </div>
     </nav>
     
-    <header class="blog-header">
+    <div class="header-section">
         <h1>Analyses & Perspectives</h1>
         <p>Expertise territoriale et documentation technique.</p>
-    </header>
+    </div>
 
     <div class="container">
         <div class="card">
-            <p style="color: var(--secondary); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Analyse</p>
+            <span style="color: var(--secondary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Analyse</span>
             <h3>L'impact des SIG dans la gestion territoriale</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Comment l'outil cartographique révolutionne la levée de l'impôt foncier au Togo...</p>
-            <a href="#" class="card-link">Lire l'article</a>
+            <p>Comment l'outil cartographique révolutionne la levée de l'impôt foncier au Togo.</p>
+            <a href="article-sig-gestion.html" class="card-link">Lire l'article</a>
         </div>
+
         <div class="card">
-            <p style="color: var(--secondary); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Guide</p>
+            <span style="color: var(--secondary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Guide</span>
             <h3>Réussir son PDC (Plan de Développement)</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
-            <a href="#" class="card-link">Consulter le guide</a>
+            <p>Les 5 étapes clés pour une planification stratégique efficace au service des citoyens.</p>
+            <a href="article-pdc-communal.html" class="card-link">Consulter le guide</a>
+        </div>
+
+        <div class="card">
+            <span style="color: var(--secondary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Juridique</span>
+            <h3>L’impact de la Loi n° 2019-006</h3>
+            <p>Analyse du cadre législatif et des défis de l'autonomie financière des collectivités locales.</p>
+            <a href="article-loi-2019.html" class="card-link">Lire l'analyse</a>
         </div>
     </div>
 
     <section id="contact"> 
         <h2 class="section-title">Contact & Consultance</h2>
-        <div style="font-size: 1.1rem;">
+        <div class="contact-info">
             <p>📍 <strong>Localisation :</strong> Lomé, Togo</p>
-            <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" style="color: var(--primary); text-decoration: none; font-weight: bold;">+228 93 01 91 05</a></p>
-            <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" style="color: var(--primary); text-decoration: none; font-weight: bold;">Démarrer une discussion</a></p>
+            <p>📞 <strong>Téléphone :</strong> <a href="tel:+22893019105" style="color: inherit; text-decoration: none; font-weight: bold;">+228 93 01 91 05</a></p>
+            <p>💬 <strong>WhatsApp :</strong> <a href="https://wa.me/22893019105" style="color: inherit; text-decoration: none; font-weight: bold;">Démarrer une discussion</a></p>
         </div>
     </section>
     
     <footer>
-        <div style="font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
-        <p style="font-size: 0.85rem; opacity: 0.9;">
-            Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale
-        </p>
-        <div style="margin-top: 15px; font-size: 0.75rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+        <div class="footer-name">K. Gnimdou M.</div>
+        <p style="opacity: 0.9; font-size: 0.9rem;">Spécialiste SIG et gestionnaire des collectivités locales | Consultant en Gouvernance Territoriale</p>
+        <div style="margin-top: 25px; font-size: 0.75rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
             &copy; KGM - K. Gnimdou M. 2026 - Togo.
         </div>
     </footer>
