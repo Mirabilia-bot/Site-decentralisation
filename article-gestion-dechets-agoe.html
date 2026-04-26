@@ -62,7 +62,9 @@
 
         <p>Seule une approche participative permettra de faire de la gestion des déchets un véritable levier du développement local durable pour la commune.</p>
     </main>
-
+<div style="font-size: 0.75rem; opacity: 0.5; text-align: center; padding: 15px 0; background: var(--bg);">
+    Dernière mise à jour : <span id="date-modif"></span>
+</div>
     <footer>
         <div style="font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">K. Gnimdou M.</div>
         <p style="font-size: 0.8rem; opacity: 0.8;">Expert SIG & Gouvernance Locale Togo</p>
@@ -70,6 +72,11 @@
             &copy; 2026 KGM - Tous droits réservés.
         </div>
     </footer>
-
+<script>
+    const dateModif = new Date(document.lastModified);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    document.getElementById('date-modif').textContent = dateModif.toLocaleDateString('fr-FR', options);
+</script>
+    
 </body>
 </html>
